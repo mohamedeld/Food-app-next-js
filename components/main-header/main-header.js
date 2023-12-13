@@ -1,22 +1,23 @@
 import React from "react";
-import { Image } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import logoImage from "@/public/images/logo.png";
+import logoImage from "@/assets/images/logo.png";
 import styles from "./main-header.module.css";
+import NavLink from "./nav-link";
 export default function MainHeader() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <img src={logoImage.src} alt="logo" />
+        <Image src={logoImage} alt="logo" priority />
         NextLevel Food
       </Link>
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link href="/meals">Browse Meals</Link>
+            <NavLink href="/meals">Browse Meals</NavLink>
           </li>
           <li>
-            <Link href="/community">Foodies Community</Link>
+            <NavLink href="/community">Foodies Community</NavLink>
           </li>
         </ul>
       </nav>
