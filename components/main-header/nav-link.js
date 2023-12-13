@@ -6,7 +6,10 @@ import styles from "./nav-link.module.css";
 export default function NavLink({ href, children }) {
   const path = usePathname();
   return (
-    <Link href={href} className={`${path === href ? styles.active : ""}`}>
+    <Link
+      href={href}
+      className={`${styles.link} ${path === href ? styles.active : ""}`}
+    >
       {children}
     </Link>
   );
